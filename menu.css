@@ -50,15 +50,7 @@ body > header:first-of-type {
   background-color: var(--header-color); 
 
   label:first-of-type {
-    top: 0;
-    right: 0;
-    position: fixed;
-    cursor: pointer;
-    min-width: var(--menu-icon-height);
-    min-height: var(--menu-icon-height);
-    display: inline-block;
-    background-color: transparent;
-    z-index: 1;
+    display: none;
   }
 
   input[type="checkbox"] {
@@ -106,6 +98,19 @@ body > header:first-of-type {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    label:first-of-type {
+      top: 0;
+      right: 0;
+      position: fixed;
+      display: inline-block;
+      cursor: pointer;
+      min-width: var(--menu-icon-height);
+      min-height: var(--menu-icon-height);
+      display: inline-block;
+      background-color: transparent;
+      z-index: 1;
+    }
 
     input[type="checkbox"] {
       &~menu-open {
