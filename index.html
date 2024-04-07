@@ -4,93 +4,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-
+  <link rel="stylesheet" href="menu.css">
   <title>Home</title>
-  <style>
-    header {
-      place-content: end;
-      display: flex;
-      flex-direction: row;
-    }
-
-    label {
-      position: absolute;
-      padding: 0.75rem;
-      top: 0;
-      cursor: pointer;
-    }
-
-    svg {
-      fill: currentColor;
-      height: 1.5rem;
-      margin-right: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    ul {
-      display: flex;
-      flex-direction: row;
-      font-size: 1.25rem;
-      line-height: 1.75rem;
-      margin-right: auto;
-      padding-top: 0.75rem;
-    }
-
-    li {
-      list-style: none;
-    }
-
-    .peer:checked~ul {
-      flex-direction: column;
-      padding-top: 0;
-      padding-bottom: 0.75rem;
-      padding-left: 1.5rem;
-      margin-left: 0;
-    }
-
-    .peer:checked~svg.bars {
-      display: none;
-    }
-
-    .peer~svg.xmark {
-      display: none;
-    }
-
-    .peer:checked~svg.xmark {
-      display: inline-block;
-    }
-
-    @media (min-width: 1024px) {
-      .peer~svg.bars {
-        display: none;
-      }
-    }
-
-    input {
-      display: none;
-    }
-  </style>
 </head>
 
 <body>
   <header>
-    <label for="toggle"></label>
-    <input class="peer" type="checkbox" id="toggle" />
-
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
-    </ul>
-
-    <svg class="bars" viewBox="0 0 448 512">
-      <use href="/bars.svg#x" />
-    </svg>
-    <svg class="xmark" viewBox="0 0 448 512">
-      <use href="/xmark.svg#x" />
-    </svg>
+    <label for="name-this-anything"></label>
+    <input type="checkbox" id="name-this-anything" checke>
+    <brand>
+      <a href="#">Brand</a>
+    </brand>
+    <nav>
+      <ul>
+        <li><a href="#">Foo</a></li>
+        <li><a href="#">Bar</a></li>
+        <li><a href="#">Baz</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Foo</a></li>
+        <li><a href="#">Bar</a></li>
+        <li><a href="#">Baz</a></li>
+      </ul>
+      <ul>
+        <li>
+          <!-- <span>hellooooooooooooooooooooooooooooo</span> -->
+          <span>hello</span>
+        </li>
+        <li>
+          <logout>Logout</logout>
+        </li>
+      </ul>
+    </nav>
+    <menu-open></menu-open>
+    <menu-close></menu-close>
   </header>
+
 </body>
 
 </html>
