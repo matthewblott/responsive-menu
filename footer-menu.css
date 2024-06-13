@@ -7,6 +7,14 @@ body {
   background: #00000f;
 }
 
+footer {
+  background-color: blue;
+}
+
+main {
+  margin-bottom: 60px; 
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -108,6 +116,9 @@ body > footer:first-of-type {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 
     > label:first-of-type {
       /* changed from top */
