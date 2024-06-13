@@ -21,7 +21,7 @@ a {
   --menu-brand-height: 1.8rem;
   --menu-right-width: 20rem;
   --menu-font-size: calc(var(--menu-brand-height) * 0.6);
-  --menu-spacing-top: calc(var(--menu-brand-height) / 8);
+  --menu-spacing-y: calc(var(--menu-brand-height) / 8);
   --menu-icon-height: var(--menu-brand-height);
   --menu-spacing-fixed-right: 0.2rem;
 }
@@ -55,7 +55,7 @@ menu-close {
   background-image: var(--menu-close);
 }
 
-body > header:first-of-type {
+body > footer:first-of-type {
   display: flex;
   align-items: center;
   min-height: var(--menu-icon-height);
@@ -104,13 +104,14 @@ body > header:first-of-type {
 }
 
 @media (max-width: 1024px) {
-  body > header:first-of-type {
+  body > footer:first-of-type {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
     > label:first-of-type {
-      top: 0;
+      /* changed from top */
+      bottom: 0;
       right: 0;
       position: fixed;
       display: inline-block;
@@ -124,7 +125,8 @@ body > header:first-of-type {
 
     > input[type="checkbox"] {
       &~menu-open {
-        top: var(--menu-spacing-top);
+        /* changed from top */
+        bottom: var(--menu-spacing-y);
         position: fixed;
         right: var(--menu-spacing-fixed-right);
         display: inline-block;
@@ -158,7 +160,8 @@ body > header:first-of-type {
         }
 
         &~menu-close {
-          top: var(--menu-spacing-top);
+          /* changed from top */
+          bottom: var(--menu-spacing-y);
           display: inline-block;
           position: fixed;
           right: var(--menu-spacing-fixed-right);
