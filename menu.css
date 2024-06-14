@@ -7,12 +7,13 @@ body {
   background: #00000f;
 }
 
-header {
+menu {
   background-color: blue;
 }
 
 main {
-  margin-top: 60px; 
+  /* margin-top: 60px;  */
+  margin-bottom: 60px; 
 }
 
 a {
@@ -64,13 +65,23 @@ menu-close {
   background-image: var(--menu-close);
 }
 
-body > header:first-of-type {
+menu {
+  padding-inline-start: 0;
   display: flex;
   align-items: center;
   min-height: var(--menu-icon-height);
   position: fixed;
   width: 100%;
-  top: 0;
+
+  &[header] {
+    top: 0;
+    margin-top: 0;
+  }
+
+  &[footer] {
+    bottom: 0;
+    margin-bottom: 0;
+  }
 
   > label:first-of-type {
     display: none;
@@ -87,6 +98,7 @@ body > header:first-of-type {
       display: none;
     }
   }
+
 
   > nav:first-of-type {
     width: calc(100% - var(--menu-right-width));
@@ -116,13 +128,22 @@ body > header:first-of-type {
 }
 
 @media (max-width: 1024px) {
-  body > header:first-of-type {
+  menu {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: fixed;
+    width: 100%;
+    
+    &[header] > label:first-of-type {
+      top: 0;
+    }
+
+    &[footer] > label:first-of-type {
+      bottom: 0;
+    }
 
     > label:first-of-type {
-      top: 0;
       right: 0;
       position: fixed;
       display: inline-block;
@@ -134,9 +155,29 @@ body > header:first-of-type {
       z-index: 1;
     }
 
+    &[header] > input[type="checkbox"] {
+      top: var(--menu-spacing-y);
+
+      &:checked {
+        &~menu-close {
+          top: var(--menu-spacing-y);
+        }
+      }
+    }
+
+    &[footer] > input[type="checkbox"] {
+      bottom: var(--menu-spacing-y);
+      
+      &:checked {
+        &~menu-close {
+          bottom: var(--menu-spacing-y);
+        }
+      }
+
+    }
+
     > input[type="checkbox"] {
       &~menu-open {
-        top: var(--menu-spacing-y);
         position: fixed;
         right: var(--menu-spacing-fixed-right);
         display: inline-block;
@@ -170,7 +211,6 @@ body > header:first-of-type {
         }
 
         &~menu-close {
-          top: var(--menu-spacing-y);
           display: inline-block;
           position: fixed;
           right: var(--menu-spacing-fixed-right);
